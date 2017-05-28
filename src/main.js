@@ -1,16 +1,23 @@
 var u = require('./u')
 
 var xhr = require('xhr')
+var dataDiscovery = require('./dataDiscovery')
 
+var cb=function(path){
 
-xhr.get("./mock/path.json", function(err, resp) {
-  var object1 = JSON.parse(resp.body)
-  //console.log(1, object.path)
-  xhr.get(object1.path, function(error, response) {
+  xhr.get(path, function(error, response) {
     var object2 = JSON.parse(response.body)
     u.renderList(object2.list);
   })
-})
+
+}
+
+dataDiscovery.getPath(cb)
+
+
+
+
+
 
 //console.log(2, object)
 // var stringtext = JSON.stringify({})
