@@ -3,12 +3,16 @@ var u = require('./u')
 var xhr = require('xhr')
 var dataDiscovery = require('./dataDiscovery')
 
-var cb=function(path){
+var cb = function(path) {
 
-  xhr.get(path, function(error, response) {
-    var object2 = JSON.parse(response.body)
-    u.renderList(object2.list);
+
+
+  dataDiscovery.getList(path, function(object2) {
+
+      u.renderList(object2)
+
   })
+
 
 }
 
