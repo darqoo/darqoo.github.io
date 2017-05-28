@@ -1,0 +1,22 @@
+{
+  "name": "darqoo.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "testin",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darqoo/darqoo.github.io.git"
+  },
+  "author": "darqoo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darqoo/darqoo.github.io/issues"
+  },
+  "homepage": "https://github.com/darqoo/darqoo.github.io#readme",
+  "devDependencies": {
+    "webpack": "^2.6.1"
+  }
+}
