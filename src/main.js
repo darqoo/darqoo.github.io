@@ -1,36 +1,17 @@
+var u = require('./u')
 
-function addClickHandling(iC, li) {
-  li.addEventListener("click", function() {
-    console.log(iC)
-  }, false);
+var xhr = require('xhr')
 
-};
+xhr.get("./mock/data.json", function(err, resp){
+  var object = JSON.parse(resp.body)
+  //console.log(1, object.list)
+  u.renderList(object.list);
+})
 
-function renderElement(ul,ai) {
-  var li = document.createElement("li");
-  li.textContent = ai + " ";
-  ul.appendChild(li);
-  addClickHandling(ai, li);
-}
-
-function getIteratorHandler(ul) {
-  return function thatIteratingThing(ai) {
-    renderElement(ul, ai);
-  }
-
-}
-
-var u = {
-
-  renderList: function(a) {
-    var el = document.querySelector("div.poop");
-    var ul = document.createElement("ul");
-
-    a.forEach(getIteratorHandler(ul))
-
-    el.appendChild(ul);
-  }
-
-};
-
-u.renderList(["element1", "element2", "element3"]);
+//console.log(2, object)
+// var stringtext = JSON.stringify({})
+// var object = JSON.parse("{}")
+//
+// setTimeout(function(){
+//   console.log(3,object)
+// }, 5000)
