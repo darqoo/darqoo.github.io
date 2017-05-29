@@ -1,7 +1,5 @@
 var xhr = require('xhr')
 
-
-
 function getPath(funk) {
 
   xhr.get("./mock/path.json", function(err, resp) {
@@ -11,18 +9,21 @@ function getPath(funk) {
   })
 }
 
-function getList(path,callback) {
+function getData(path, callback) {
 
   xhr.get(path, function(error, response) {
     var object2 = JSON.parse(response.body)
-    callback(object2.list);
+    callback(object2);
+    // console.log(object2);
+    // console.log(path);
   })
 
 }
 
+
 module.exports = {
 
   getPath: getPath,
-  getList: getList
+  getData: getData
 
 };

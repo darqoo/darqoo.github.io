@@ -4,16 +4,9 @@ var xhr = require('xhr')
 var dataDiscovery = require('./dataDiscovery')
 
 var cb = function(path) {
-
-
-
-  dataDiscovery.getList(path, function(object2) {
-
-      u.renderList(object2)
-
+  dataDiscovery.getData(path, function(object2) {
+    u.renderList(object2.list)
   })
-
-
 }
 
 dataDiscovery.getPath(cb)
